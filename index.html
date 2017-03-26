@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Toledo : espacio y Tiempo</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/3.20/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/3.20/esri/css/esri.css">
+    <link rel="stylesheet" href="./css/style.css">
+    </script><script src="https://js.arcgis.com/3.20/"></script>
+    <script type="text/javascript" src="./js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
+
+
+  </head>
+
+
+<body class="claro">
+<a href="http://psig.huma-num.fr/toledo/">
+   <div id="barremenu"> </div>
+</a>
+<!--************* MAP **************************-->
+    <div class="" id="map"  data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'" style="overflow:hidden;"></div>
+<!--*************FIN DE LA MAP **************************-->
+<div id="container_table">
+     <div id="hide_show">
+       <span id="anim" class="glyphicon glyphicon-triangle-top"></span>
+     </div>
+     <div id="myTableNode" ></div>
+ <!--************* TABLE ATTRIBUTAIRE **************************-->
+</div>
+<!--*************LEGENDE **************************-->
+   <div id="legendTitle" class="btn btn-default"><a>Légende<span class="glyphicon glyphicon-triangle-bottom"></span></a></div>
+
+   <div id="rightPane">
+     <!--Maisons-->
+     <span id="maisons"><strong>Maisons</strong></span>
+           <div id="feedback" class="shadow">
+                  <div id="info" >
+                     <div id="layerList"></div>
+                  </div>
+          </div><br>
+
+    <!--Parcelles-->
+    <span id="parcelles"><strong>Parcelles</strong></span>
+          <div id="feedback2" class="shadow">
+                 <div id="info2">
+                    <div id="layerList2"></div>
+                 </div>
+         </div><br>
+
+         <!--Rues-->
+         <span id="rues"><strong>Rues</strong></span>
+               <div id="feedback3" class="shadow">
+                      <div id="info3">
+                         <div id="layerList3"></div>
+                      </div>
+              </div><br>
+
+        <!--Topographie-->
+          <span id="topographie"><strong>Topographie</strong></span>
+                <div id="feedback4" class="shadow">
+                       <div id="info4">
+                          <div id="layerList4"></div>
+                       </div>
+               </div><br>
+  </div>
+  <script type="text/javascript" src="./js/toledo.js"></script>
+  <script type="text/javascript" src="./js/featureTable.js"></script>
+  <script type="text/javascript" src="./js/ordermaisons.js"></script>
+  <script type="text/javascript" src="./js/orderparcelles.js"></script>
+  <script type="text/javascript" src="./js/orderrues.js"></script>
+  <script type="text/javascript" src="./js/ordertopo.js"></script>
+
+
+
+  </body>
+</html>
