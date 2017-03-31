@@ -48,7 +48,8 @@ require([
      });
      // only create the layer list the first time update-end fires
      on.once(rues, "update-end", buildLayerList);
-     map.addLayer(rues);
+     //map.addLayer(rues);
+     table.push(rues);
 
        function buildLayerList() {
         dndSource.clearItems();

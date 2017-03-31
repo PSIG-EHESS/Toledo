@@ -108,8 +108,8 @@ require([
 
         // Redlands police vehicle locations layer
         // this layer is an editable layer
-        map.addLayer(myFeatureLayer);
-
+        //map.addLayer(myFeatureLayer);
+      table.push(myFeatureLayer)
         //create new FeatureTable and set its properties
         var myFeatureTable = new FeatureTable({
           featureLayer : myFeatureLayer,

@@ -19,16 +19,16 @@
         parser, arrayUtils, Source, registry
      ) {
 
-        var parcelles, infos = {};
+        var maisons, infos = {};
         var dynamicLayerInfos;
 
         var dndSource = new Source("layerList");
         dndSource.on("DndDrop", reorderLayers);
 
-        parcelles = new ArcGISDynamicMapServiceLayer("http://repos.sig.huma-num.fr/arcgis/rest/services/medievalgis/maisons2/MapServer", {
+        maisons = new ArcGISDynamicMapServiceLayer("http://repos.sig.huma-num.fr/arcgis/rest/services/medievalgis/maisons/MapServer", {
            "id": "maisons"
         });
-        parcelles.on("load", function (e) {
+        maisons.on("load", function (e) {
            dynamicLayerInfos = e.target.createDynamicLayerInfosFromLayerInfos();
            arrayUtils.forEach(dynamicLayerInfos, function (info) {
               var i = {
@@ -36,7 +36,7 @@
                  name: info.name,
                  position: info.id
               };
-              if (arrayUtils.indexOf(parcelles.visibleLayers, info.id) > -1) {
+              if (arrayUtils.indexOf(maisons.visibleLayers, info.id) > -1) {
                  i.visible = true;
               } else {
                  i.visible = false;
@@ -47,9 +47,9 @@
            e.target.setDynamicLayerInfos(dynamicLayerInfos, true);
         });
         // only create the layer list the first time update-end fires
-        on.once(parcelles, "update-end", buildLayerList);
-        map.addLayer(parcelles);
-
+        on.once(maisons, "update-end", buildLayerList);
+        //map.addLayer(maisons);
+        table.push(maisons);
           function buildLayerList() {
            dndSource.clearItems();
            domConstruct.empty(dom.byId("layerList"));
@@ -78,15 +78,15 @@
            }
            var visible = getVisibleLayers();
            if (visible.length === 0) {
-              parcelles.setVisibleLayers([-1]);
+              maisons.setVisibleLayers([-1]);
            } else {
-              parcelles.setDynamicLayerInfos(visible);
+              maisons.setDynamicLayerInfos(visible);
            }
         }
 
         function reorderLayers() {
            var newOrder = getVisibleLayers();
-           parcelles.setDynamicLayerInfos(newOrder);
+           maisons.setDynamicLayerInfos(newOrder);
         }
 
         function getVisibleLayers() {

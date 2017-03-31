@@ -48,7 +48,8 @@ require([
      });
      // only create the layer list the first time update-end fires
      on.once(topographie, "update-end", buildLayerList);
-     map.addLayer(topographie);
+  //   map.addLayer(topographie);
+table.push(topographie);
 
        function buildLayerList() {
         dndSource.clearItems();

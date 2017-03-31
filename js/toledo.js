@@ -1,19 +1,3 @@
-var animation = $("#animation");
-var anim = $("#anim");
-var table = $("#table");
-var container_table = $("#container_table");
-var baseMapShow = $("#iconMapGallery"); //Icone qui permet d'afficher/cacher les fonds de cartes
-var legendTitle = $("#legendTitle");
-$("#maisons").on("mouseover",function() {$("#feedback").slideToggle(2e2);});
-$("#parcelles").on("mouseover",function() {$("#feedback2").slideToggle(2e2);});
-$("#rues").on("mouseover",function() {$("#feedback3").slideToggle(2e2);});
-$("#topographie").on("mouseover",function() {$("#feedback4").slideToggle(2e2);});
-
-legendTitle.on("click",showLegend);//button qui permet d'afficher/cacher les fonds de cartes
-anim.on("click",masquer_afficher);
-baseMapShow.on("click",showBaseMaps);
-
-var map;
 require([
           "esri/map","esri/layers/FeatureLayer", "esri/dijit/BasemapGallery", "esri/arcgis/utils","dojo/_base/array",
           "esri/layers/ArcGISImageServiceLayer",
@@ -46,34 +30,3 @@ require([
     });
 
 /* fonds de cartes */
-
-function masquer_afficher()
-{
-  if(anim.hasClass("glyphicon glyphicon-triangle-bottom"))
-  {
-    container_table.css("top","98%");
-    anim.removeClass("glyphicon glyphicon-triangle-bottom");
-    anim.addClass("glyphicon glyphicon-triangle-top");
-  }
-
-  else {
-    container_table.css("top","45%");
-    anim.removeClass("glyphicon glyphicon-triangle-top");
-    anim.addClass("glyphicon glyphicon-triangle-bottom");
-  }
-}
-
-
-/* Masquer le panneau des fonds de cartes */
-function showBaseMaps()
-{
-  $("#baseMaps").css("visibility","visible");
-  $("#baseMaps").slideToggle(2e2);
-}
-
-/* Masquer le panneau de la légende */
-function showLegend()
-{
-  $("#rightPane").css("visibility","visible");
-  $("#rightPane").slideToggle(2e2);
-}

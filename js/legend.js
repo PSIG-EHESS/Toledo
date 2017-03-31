@@ -17,7 +17,7 @@ require([
          var legendDijit = new Legend({
            map: map,
            layerInfos: layerInfo
-         }, "legendDiv");
+         }, "legendDiv2");
          legendDijit.startup();
        }
      });

@@ -25,26 +25,6 @@ body
    margin: 0;
 }
 
-#iconMapGallery
-{
-  cursor:pointer;
-  position:absolute;
-  left:20px;
-  top:150px;
-  z-index:999;
-  font-size:30px;
-  border-radius: 2px;
-  border: solid 1px black;
-  padding: 3px;
-  text-align: center;
-  }
-
-ul
-{
-  display: flex;
-  align-content: space-between;
-}
-
 #titre
 {
   width:180px;
@@ -55,38 +35,68 @@ ul
 {
   z-index:2000;
   position:fixed;
-  right:0.2%;
   top:15%;
+  right:-0.1%;
   width: 85px;
-  text-decoration: underline;
+  color:red;
 }
-#legendTitle :hover
-{
-  font-size: 2em;
-}
+
 
 #rightPane
 {
-  background-color: gray;
+  background-color: rgb(200,200,200);
   border-radius: 6px;
   z-index:2000;
   position:fixed;
   right:0.2%;
   top:25%;
-  height:400px;
-  width:300px;
+  height:200px;
   margin: 0;
   visibility: hidden;
-  overflow: scroll;
+  overflow-y: scroll;
+}
+
+#symbology
+{
+  position: fixed;
+  top:28%;
+  left:0.8%;
+  text-align:center;
+  border:solid 1px black;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 2px;
+  cursor:pointer;
+  color:red;
+}
+
+#legendDiv2
+{
+  cursor:default;
+  height:200px;
+  overflow: auto;
+}
+
+#symbologyContainer
+{
+  position:fixed;
+  top:34.2%;
+  left:1%;
+  z-index:2000;
+  background-color:white;
+  width: auto;
+  border-radius: 6px;
+  cursor:move;
 }
 
 .shadow
 {
-   box-shadow: 0 0 5px #888;
-   margin-left: 15px;
+   box-shadow: 0 0 1px #888;
+   margin-left: 12px;
    background: #fff;
    color: #444;
-   width: 100%;
+   width: 95.5%;
 }
 
 .shadow :hover
@@ -107,16 +117,12 @@ span :hover
    background: #ccc;
 }
 
-#layerList
-{
-  //height: 0;
-  //visibility: hidden;
-}
 
 #anim
 {
   cursor:Pointer;
 }
+
 #container_table
 {
   transition: top 1s;
