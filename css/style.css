@@ -36,23 +36,30 @@ body
   z-index:2000;
   position:fixed;
   top:15%;
-  right:-0.1%;
+  right:-2.7%;
   width: 85px;
   color:red;
+  text-align: left;
 }
 
 
 #rightPane
 {
-  background-color: rgb(200,200,200);
+  background-color: rgb(255,83,10);
   border-radius: 6px;
   z-index:2000;
   position:fixed;
   right:0.2%;
-  top:25%;
-  height:200px;
+  top:21%;
+
   margin: 0;
   visibility: hidden;
+
+}
+
+#layer
+{
+  height:230px;
   overflow-y: scroll;
 }
 
@@ -60,24 +67,14 @@ body
 {
   position: fixed;
   top:28%;
-  left:0.8%;
-  text-align:center;
+  left:-2.5%;
+  text-align: right;
   border:solid 1px black;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 2px;
   cursor:pointer;
   color:red;
+  width: 85px;
+  height: 30px;
 }
-
-#legendDiv2
-{
-  cursor:default;
-  height:200px;
-  overflow: auto;
-}
-
 #symbologyContainer
 {
   position:fixed;
@@ -90,13 +87,23 @@ body
   cursor:move;
 }
 
+#legendDiv2
+{
+  cursor:default;
+  height:200px;
+  overflow: auto;
+}
+
+
+
 .shadow
 {
    box-shadow: 0 0 1px #888;
-   margin-left: 12px;
+   margin-left: 5px;
    background: #fff;
    color: #444;
    width: 95.5%;
+   border-radius: 5px;
 }
 
 .shadow :hover

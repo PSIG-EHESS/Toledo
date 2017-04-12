@@ -1,3 +1,5 @@
+var map;
+
 require([
           "esri/map","esri/layers/FeatureLayer", "esri/dijit/BasemapGallery", "esri/arcgis/utils","dojo/_base/array",
           "esri/layers/ArcGISImageServiceLayer",
@@ -11,22 +13,14 @@ require([
          {
 
             parser.parse();
-            map = new Map("map", {
-                        basemap:"satellite",
-                        center: [-4.023569,39.857331],
-                        zoom: 16
-                      });
-
-            //add the basemap gallery, in this case we'll display maps from ArcGIS.com including bing maps
-
-
             var params = new ImageServiceParameters();
             params.noData = 0;
             var imageServiceLayer = new ArcGISImageServiceLayer("http://repos.sig.huma-num.fr/arcgis/rest/services/medievalgis/Orto_Toledo_colorR_2006/ImageServer", {
               imageServiceParameters: params,
               opacity: 0.75
             });
-            map.addLayer(imageServiceLayer);
+            //map.addLayer(imageServiceLayer);
+            table.push(imageServiceLayer);
     });
 
 /* fonds de cartes */

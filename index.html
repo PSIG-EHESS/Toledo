@@ -9,19 +9,12 @@
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
-    $( function() {
-      $("#symbologyContainer").draggable();
-    });
-    </script>
-  </script><script src="https://js.arcgis.com/3.20/"></script>
-<script type="text/javascript">
-  var map;
-  var table=[];
-</script>
+    </script><script src="https://js.arcgis.com/3.20/"></script>
+    <script type="text/javascript" src="./js/init.js" async></script>
+
 </head>
 <body class="claro">
-<a href="http://psig.huma-num.fr/toledo/">
+<a href="http://psig.huma-num.fr/toledo/" target="_blank">
    <div id="barremenu"> </div>
 </a>
 <!--************* MAP **************************-->
@@ -38,7 +31,9 @@
    <div id="legendTitle" class="btn btn-default glyphicon glyphicon-eye-open"></div>
 
    <div id="rightPane">
+     <div  style="text-align:right;"><p id="chevron" class="glyphicon glyphicon-new-window" style="cursor:pointer;margin:0px;padding:0"></p></div>
      <!--Maisons-->
+     <div id="layers">
      <span id="maisons"><strong>Maisons</strong></span>
            <div id="feedback" class="shadow">
                   <div id="info" >
@@ -69,25 +64,39 @@
                           <div id="layerList4"></div>
                        </div>
                </div><br>
+
+         <!--Rasters-->
+           <span id="rasters"><strong>Rasters</strong></span>
+                 <div id="feedback5" class="shadow">
+                        <div id="info5">
+                           <div id="layerList5"></div>
+                        </div>
+                </div><br>
+  </div>
   </div>
 
   <div id="symbology" class="btn btn-default glyphicon glyphicon-equalizer">
     <p></p>
   </div>
   <div id="symbologyContainer" style="visibility:hidden"  class="ui-widget-content" >
+     <div  style="text-align:center;color:red"><p id="chevron2" class="glyphicon glyphicon-collapse-up" style="cursor:pointer;margin:0px;padding:0"></p></div>
       <div id="legendDiv2"></div>
     </div>
 
   <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="./js/toledo.js"></script>
-  <script type="text/javascript" src="./js/featureTable.js"></script>
+  <script type="text/javascript" src="./js/toledo.js" ></script>
+  <script type="text/javascript" src="./js/orderRaster.js"></script>
   <script type="text/javascript" src="./js/ordermaisons.js"></script>
-  <script type="text/javascript" src="./js/orderparcelles.js"></script>
   <script type="text/javascript" src="./js/orderrues.js"></script>
   <script type="text/javascript" src="./js/ordertopo.js"></script>
+  <script type="text/javascript" src="./js/orderparcelles.js"></script
+  <script type="text/javascript" src="./js/featureTable.js"></script>
   <script type="text/javascript" src="./js/addLayers.js"></script>
-  <script type="text/javascript" src="./js/legend.js"></script>
   <script type="text/javascript" src="./js/event.js"></script>
+  <script type="text/javascript" src="./js/legend.js"></script>
+
+
+
 
 
 

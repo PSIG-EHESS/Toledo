@@ -10,17 +10,21 @@ $("#rues").on("mouseover",function() {$("#feedback3").slideToggle(2e2);});
 $("#topographie").on("mouseover",function() {$("#feedback4").slideToggle(2e2);});
 $("#symbologyContainer").css("visibility","visible");$("#symbologyContainer").slideToggle(1e0);
 $("#rightPane").css("visibility","visible");$("#rightPane").slideUp(0);
+$( function() {  $("#symbologyContainer").draggable();});
+$( function() {  $("#rightPane").draggable();});
+$("#chevron").on("click",function(){$("#rightPane").slideToggle(2e2);})
+$("#chevron2").on("click",function(){$("#symbologyContainer").slideUp(2e2);})
 
 legendTitle.on("click",function(){$("#rightPane").slideToggle(2e2);})
 legendTitle.on("mouseover",function(){
-  legendTitle.css("width","200px");
+  legendTitle.css("width","130px");
   legendTitle.text(" Couches");
 })
 legendTitle.on("mouseout",function(){  legendTitle.css("width","85px"); legendTitle.text("");})
 anim.on("click",masquer_afficher);
 
-symbology.on("mouseover",function(){symbology.css("width","200px");symbology.text(" Symbologie");})
-symbology.on("mouseout",function(){  symbology.css("width","auto"); symbology.text("");})
+symbology.on("mouseover",function(){symbology.css("width","150px");symbology.text(" Symbologie");})
+symbology.on("mouseout",function(){  symbology.css("width","85px"); symbology.text("");})
 symbology.on("click",function() {$("#symbologyContainer").slideToggle(2e2); });
 
 function masquer_afficher()
@@ -38,13 +42,3 @@ function masquer_afficher()
     anim.addClass("glyphicon glyphicon-triangle-bottom");
   }
 }
-
-
-/* Masquer le panneau des fonds de cartes */
-function showBaseMaps()
-{
-  $("#baseMaps").css("visibility","visible");
-  $("#baseMaps").slideToggle(2e2);
-}
-
-/* Masquer le panneau de la légende */

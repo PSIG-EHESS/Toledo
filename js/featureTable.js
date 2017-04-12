@@ -44,22 +44,12 @@ require([
 
         // editable FeatureLayer
         var myFeatureLayer = new FeatureLayer(url, {
-          mode: FeatureLayer.MODE_ONDEMAND,
+          mode: FeatureLayer.MODE_AUTO,
           infoTemplate: infoTemplate,
           outFields: ["*"],
           visible: true,
           id: "fLayer2"
         });
-
-
-
-        // listen to featurelayer click event to handle selection
-        // from layer to the table.
-        // when user clicks on a feature on the map, the corresponding
-        // record will be selected in the table.
-        //add the legend
-
-        //add the legend
 
 
         myFeatureLayer.on("click", function(evt) {
@@ -108,8 +98,8 @@ require([
 
         // Redlands police vehicle locations layer
         // this layer is an editable layer
-        //map.addLayer(myFeatureLayer);
-      table.push(myFeatureLayer)
+        map.addLayer(myFeatureLayer);
+      //table.push(myFeatureLayer)
         //create new FeatureTable and set its properties
         var myFeatureTable = new FeatureTable({
           featureLayer : myFeatureLayer,
