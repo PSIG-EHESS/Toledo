@@ -21,6 +21,32 @@ require([
             });
             //map.addLayer(imageServiceLayer);
             table.push(imageServiceLayer);
+
+
     });
+
+jQuery.loadScript = function (url, callback) {
+    jQuery.ajax({
+        url: url,
+        dataType: 'script',
+        success: callback,
+        async: true
+    });
+}
+
+    $.loadScript('./js/featureTable.js', function(){});
+    $.loadScript('./js/orderRaster.js', function(){});
+    $.loadScript('./js/ordermaisons.js', function(){});
+    $.loadScript('./js/orderparcelles.js', function(){});
+    $.loadScript('./js/orderrues.js', function(){});
+    $.loadScript('./js/ordertopo.js', function(){});
+    $.loadScript('./js/addLayers.js', function(){});
+    $.loadScript('./js/legend.js', function(){});
+    $.loadScript('./js/event.js', function(){});
+
+
+
+
+
 
 /* fonds de cartes */

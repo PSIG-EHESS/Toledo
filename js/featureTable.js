@@ -1,4 +1,3 @@
-
 require([
   "esri/layers/FeatureLayer",
   "esri/dijit/Legend",
@@ -38,6 +37,8 @@ require([
                   {
                      content+= "<b>"+monjson.fields[i].name+"</b>: ${"+monjson.fields[i].name+"}<br>";
                   }
+
+
 
                     var infoTemplate = new InfoTemplate("Parcelle", content);
 
@@ -91,7 +92,6 @@ require([
                query.returnGeometry = false;
                query.objectIds = [featureId];
                query.where = "1=1";
-
                myFeatureLayer.selectFeatures(query, FeatureLayer.SELECTION_NEW);
            }
          });
@@ -99,7 +99,7 @@ require([
         // Redlands police vehicle locations layer
         // this layer is an editable layer
         map.addLayer(myFeatureLayer);
-      //table.push(myFeatureLayer)
+         //table.push(myFeatureLayer);
         //create new FeatureTable and set its properties
         var myFeatureTable = new FeatureTable({
           featureLayer : myFeatureLayer,
@@ -109,10 +109,6 @@ require([
           zoomToSelection:true,
           syncSelection: true,
           showAttachments: true,
-
-          // use fieldInfos object to change field's label (column header),
-          // change the editability of the field, and to format how field values are displayed
-          // you will not be able to edit callnumber field in this example.
 
         }, 'myTableNode');
 
@@ -127,7 +123,5 @@ require([
     });
   ajax.send();
 });
-
-
 
   });

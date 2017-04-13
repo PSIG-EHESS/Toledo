@@ -19,9 +19,18 @@ $(document).ready(function(){
        query, on,
        parser, arrayUtils, Source, registry
     ) {
-           map.addLayers(table);
+           map.addLayers(reverseArr(table));
   });
 
 
 
 });
+
+
+function reverseArr(input) {
+  var ret = new Array;
+  for(var i = input.length-1; i >= 0; i--) {
+ret.push(input[i]);
+}
+return ret;
+}

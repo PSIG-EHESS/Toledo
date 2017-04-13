@@ -16,10 +16,12 @@ $("#chevron").on("click",function(){$("#rightPane").slideToggle(2e2);})
 $("#chevron2").on("click",function(){$("#symbologyContainer").slideUp(2e2);})
 
 legendTitle.on("click",function(){$("#rightPane").slideToggle(2e2);})
-legendTitle.on("mouseover",function(){
+legendTitle.on("mouseover",function()
+{
   legendTitle.css("width","130px");
   legendTitle.text(" Couches");
 })
+
 legendTitle.on("mouseout",function(){  legendTitle.css("width","85px"); legendTitle.text("");})
 anim.on("click",masquer_afficher);
 
@@ -36,7 +38,8 @@ function masquer_afficher()
     anim.addClass("glyphicon glyphicon-triangle-top");
   }
 
-  else {
+  else
+  {
     container_table.css("top","45%");
     anim.removeClass("glyphicon glyphicon-triangle-top");
     anim.addClass("glyphicon glyphicon-triangle-bottom");
