@@ -110,7 +110,7 @@ require([
           syncSelection: true,
           showAttachments: true,
 
-        }, 'myTableNode');
+        }, 'tab1');
 
 
         myFeatureTable.startup();

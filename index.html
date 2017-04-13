@@ -20,13 +20,24 @@
 <!--************* MAP **************************-->
     <div class="" id="map"  data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'" style="overflow:hidden;"></div>
 <!--*************FIN DE LA MAP **************************-->
-<div id="container_table">
-     <div id="hide_show">
-       <span id="anim" class="glyphicon glyphicon-triangle-top"></span>
+<div id="container_table" style="background-color:gray">
+     <div id="hide_show"><span id="anim" class="glyphicon glyphicon-triangle-top"></span></div>
+
+     <div class="container" style="margin:0;padding:0">
+       <ul class="nav nav-tabs">
+        <li class="active"><a id="parce" data-toggle="tab" href="#tab1">Parcelles</a></li>
+        <li><a id="mais1" data-toggle="tab" href="#tab2">Maison 1</a></li>
+        <li><a id="mais2" data-toggle="tab" href="#tab3">Maison 2</a></li>
+       </ul>
      </div>
-     <div id="myTableNode" ></div>
+
+          <div id="tab1" class="tab-pane fade in active"></div>
+          <div id="tab2" class="tab-pane fade"><h2>on test</h2></div>
+          <div id="tab3" class="tab-pane fade"></div>
+     </div>
+
  <!--************* TABLE ATTRIBUTAIRE **************************-->
-</div>
+
 <!--*************LEGENDE **************************-->
    <div id="legendTitle" class="btn btn-default glyphicon glyphicon-eye-open"></div>
 
@@ -85,12 +96,5 @@
 
   <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="./js/toledo.js" ></script>
-
-
-
-
-
-
-
   </body>
 </html>

@@ -1,5 +1,3 @@
-var map;
-
 require([
           "esri/map","esri/layers/FeatureLayer", "esri/dijit/BasemapGallery", "esri/arcgis/utils","dojo/_base/array",
           "esri/layers/ArcGISImageServiceLayer",
@@ -21,8 +19,6 @@ require([
             });
             //map.addLayer(imageServiceLayer);
             table.push(imageServiceLayer);
-
-
     });
 
 jQuery.loadScript = function (url, callback) {
@@ -43,10 +39,3 @@ jQuery.loadScript = function (url, callback) {
     $.loadScript('./js/addLayers.js', function(){});
     $.loadScript('./js/legend.js', function(){});
     $.loadScript('./js/event.js', function(){});
-
-
-
-
-
-
-/* fonds de cartes */
