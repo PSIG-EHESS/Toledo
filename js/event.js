@@ -26,7 +26,7 @@ $("#chevron2").on("click",function(){$("#symbologyContainer").slideUp(2e2);})
 //Gestion de la transition des tables attributaires
 $("#parce").on("click",function(){  $("#tab2").hide();$("#tab3").hide();$("#tab1").show();})
 $("#mais1").on("click",function(){  $("#tab1").hide();$("#tab3").hide();$("#tab2").show();})
-$("#mais2").on("click",function(){  $("#tab1").hide();$("#tab2").hide();$("#tab3").hide();})
+$("#mais2").on("click",function(){  $("#tab1").hide();$("#tab2").hide();$("#tab3").show();})
 //FIN
 
 

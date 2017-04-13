@@ -10,7 +10,6 @@ require([
         ImageServiceParameters,  parser)
          {
 
-            parser.parse();
             var params = new ImageServiceParameters();
             params.noData = 0;
             var imageServiceLayer = new ArcGISImageServiceLayer("http://repos.sig.huma-num.fr/arcgis/rest/services/medievalgis/Orto_Toledo_colorR_2006/ImageServer", {
@@ -25,12 +24,14 @@ jQuery.loadScript = function (url, callback) {
     jQuery.ajax({
         url: url,
         dataType: 'script',
-        success: callback,
-        async: true
+        success: callback
     });
 }
 
-    $.loadScript('./js/featureTable.js', function(){});
+    $.loadScript('./js/featureTableParcelles.js', function(){});
+  //  $.loadScript('./js/test.js', function(){});
+    $.loadScript('./js/featureTableMaison1439.js', function(){});
+    $.loadScript('./js/featureTableMaison1492.js', function(){});
     $.loadScript('./js/orderRaster.js', function(){});
     $.loadScript('./js/ordermaisons.js', function(){});
     $.loadScript('./js/orderparcelles.js', function(){});
