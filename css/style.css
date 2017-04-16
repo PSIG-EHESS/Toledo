@@ -45,13 +45,13 @@ body
 
 #rightPane
 {
-  background-color: rgb(255,83,10);
+  background-color: #7F1C11;
   border-radius: 6px;
   z-index:2000;
   position:fixed;
   right:0.2%;
   top:21%;
-
+  color:white;
   margin: 0;
   visibility: hidden;
 

@@ -7,6 +7,7 @@ var symbology = $("#symbology");
 
 
 //Gestion de l'affichage des couches
+$("div .shadow").slideUp(0);
 $("#maisons").on("mouseover",function() {$("#feedback").slideToggle(2e2);});
 $("#parcelles").on("mouseover",function() {$("#feedback2").slideToggle(2e2);});
 $("#rues").on("mouseover",function() {$("#feedback3").slideToggle(2e2);});

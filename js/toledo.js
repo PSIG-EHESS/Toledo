@@ -28,13 +28,13 @@ jQuery.loadScript = function (url, callback) {
     });
 }
 
+
     $.loadScript('./js/featureTableParcelles.js', function(){});
-  //  $.loadScript('./js/test.js', function(){});
     $.loadScript('./js/featureTableMaison1439.js', function(){});
     $.loadScript('./js/featureTableMaison1492.js', function(){});
-    $.loadScript('./js/orderRaster.js', function(){});
     $.loadScript('./js/ordermaisons.js', function(){});
     $.loadScript('./js/orderparcelles.js', function(){});
+    $.loadScript('./js/orderRaster.js', function(){});
     $.loadScript('./js/orderrues.js', function(){});
     $.loadScript('./js/ordertopo.js', function(){});
     $.loadScript('./js/addLayers.js', function(){});

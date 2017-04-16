@@ -30,7 +30,7 @@ require([
         loadTable();
 
         function loadTable(){
-          var url = "http://repos.sig.huma-num.fr/arcgis/rest/services/medievalgis/parcellemaisons/MapServer/3";
+          var url = "http://repos.sig.huma-num.fr/arcgis/rest/services/medievalgis/maisons1439/MapServer/0";
           var monjson=null;
           var content="";
           //AJAX
@@ -42,15 +42,15 @@ require([
                       monjson =JSON.parse(ajax.responseText);
                       var i=0;
 
-                      for(i=0;i<monjson.fields.length;i++)
+                  for(i=0;i<monjson.fields.length;i++)
                       {
                          content+= "<b>"+monjson.fields[i].name+"</b>: ${"+monjson.fields[i].name+"}<br>";
                       }
-             }
+            }
            });
            ajax.send();
 
-                     var infoTemplate = new InfoTemplate("Maisons1439", content);
+               var infoTemplate = new InfoTemplate("Maisons1439", content);
 
                        var myFeatureLayer = new FeatureLayer(url,{
                           mode: FeatureLayer.MODE_ONDEMAND,

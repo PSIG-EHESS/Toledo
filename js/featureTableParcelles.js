@@ -50,14 +50,14 @@ require([
            });
            ajax.send();
 
-                     var infoTemplate = new InfoTemplate("Maisons1439", content);
+                     var infoTemplate = new InfoTemplate("Parcelles", content);
 
                        var myFeatureLayer = new FeatureLayer(url,{
                           mode: FeatureLayer.MODE_ONDEMAND,
                           infoTemplate: infoTemplate,
                           outFields: ["*"],
                           visible: true,
-                          id: "fLayer3"
+                          id: "fLayer1"
                         });
 
           // set a selection symbol for the featurelayer

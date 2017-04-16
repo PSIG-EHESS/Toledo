@@ -50,7 +50,7 @@ require([
            });
            ajax.send();
 
-                     var infoTemplate = new InfoTemplate("Maisons1439", content);
+                     var infoTemplate = new InfoTemplate("Maisons1492", content);
 
                        var myFeatureLayer = new FeatureLayer(url,{
                           mode: FeatureLayer.MODE_ONDEMAND,

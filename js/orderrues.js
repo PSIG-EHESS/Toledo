@@ -21,7 +21,6 @@ require([
 
      var rues, infos = {};
      var dynamicLayerInfos;
-
      var dndSource = new Source("layerList3");
      dndSource.on("DndDrop", reorderLayers);
 
