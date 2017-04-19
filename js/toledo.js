@@ -28,7 +28,7 @@ jQuery.loadScript = function (url, callback) {
     });
 }
 
-
+//Test
     $.loadScript('./js/featureTableParcelles.js', function(){});
     $.loadScript('./js/featureTableMaison1439.js', function(){});
     $.loadScript('./js/featureTableMaison1492.js', function(){});
