@@ -38,5 +38,5 @@ jQuery.loadScript = function (url, callback) {
     $.loadScript('./js/orderrues.js', function(){});
     $.loadScript('./js/ordertopo.js', function(){});
     $.loadScript('./js/addLayers.js', function(){});
-    $.loadScript('./js/legend.js', function(){});
+    $.loadScript('./js/symbology.js', function(){});
     $.loadScript('./js/event.js', function(){});

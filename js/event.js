@@ -8,11 +8,11 @@ var symbology = $("#symbology");
 
 //Gestion de l'affichage des couches
 $("div .shadow").slideUp(0);
-$("#maisons").on("mouseover",function() {$("#feedback").slideToggle(2e2);});
-$("#parcelles").on("mouseover",function() {$("#feedback2").slideToggle(2e2);});
-$("#rues").on("mouseover",function() {$("#feedback3").slideToggle(2e2);});
-$("#topographie").on("mouseover",function() {$("#feedback4").slideToggle(2e2);});
-$("#rasters").on("mouseover",function() {$("#feedback5").slideToggle(2e2);});
+$("#maisons").on("click",function(e) {$("#feedback").slideToggle(2e2);plus_moins(e);});
+$("#parcelles").on("click",function(e) {$("#feedback2").slideToggle(2e2);plus_moins(e);});
+$("#rues").on("click",function(e) {$("#feedback3").slideToggle(2e2);plus_moins(e);});
+$("#topographie").on("click",function(e) {$("#feedback4").slideToggle(2e2);plus_moins(e);});
+$("#rasters").on("click",function(e) {$("#feedback5").slideToggle(2e2);plus_moins(e);});
 $("#rightPane").css("visibility","visible");$("#rightPane").slideUp(0);
 $( function() {  $("#rightPane").draggable();});
 $("#chevron").on("click",function(){$("#rightPane").slideToggle(2e2);})
@@ -24,6 +24,7 @@ $("#symbologyContainer").css("visibility","visible");$("#symbologyContainer").sl
 $( function() {  $("#symbologyContainer").draggable();});
 
 $("#chevron2").on("click",function(){$("#symbologyContainer").slideUp(2e2);})
+
 //Gestion de la transition des tables attributaires
 $("#parce").on("click",function(){  $("#tab2").hide();$("#tab3").hide();$("#tab1").show();})
 $("#mais1").on("click",function(){  $("#tab1").hide();$("#tab3").hide();$("#tab2").show();})
@@ -55,5 +56,20 @@ function masquer_afficher()
     container_table.css("top","45%");
     anim.removeClass("glyphicon glyphicon-triangle-top");
     anim.addClass("glyphicon glyphicon-triangle-bottom");
+  }
+}
+
+function plus_moins(event)
+{
+  if($(event.currentTarget).hasClass("glyphicon glyphicon-plus"))
+  {
+    $(event.currentTarget).removeClass("glyphicon glyphicon-plus");
+    $(event.currentTarget).addClass("glyphicon glyphicon-minus");
+  }
+
+  else
+  {
+    $(event.currentTarget).removeClass("glyphicon glyphicon-minus");
+    $(event.currentTarget).addClass("glyphicon glyphicon-plus");
   }
 }

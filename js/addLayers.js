@@ -19,7 +19,7 @@ $(document).ready(function(){
        query, on,
        parser, arrayUtils, Source, registry
     ) {
-           map.addLayers(reverseArr(table));
+      map.addLayers(reverseArr(table));
   });
 
 
