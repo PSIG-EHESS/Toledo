@@ -25,7 +25,7 @@ require([
      var dndSource = new Source("layerList4");
      dndSource.on("DndDrop", reorderLayers);
 
-     topographie = new ArcGISDynamicMapServiceLayer("http://repos.sig.huma-num.fr/arcgis/rest/services/medievalgis/topographie/MapServer", {
+     topographie = new ArcGISDynamicMapServiceLayer("http://repos.sig.huma-num.fr/arcgis/rest/services/medievalgis/testphoto/MapServer", {
         "id": "topographie"
      });
      topographie.on("load", function (e) {
@@ -49,6 +49,8 @@ require([
      // only create the layer list the first time update-end fires
      on.once(topographie, "update-end", buildLayerList);
   //   map.addLayer(topographie);
+  //Rendre les couches invisibles au départ
+//  topographie.setVisibleLayers([-1]);
 table.push(topographie);
 
        function buildLayerList() {

@@ -25,7 +25,7 @@ require([
      var dndSource = new Source("layerList2");
      dndSource.on("DndDrop", reorderLayers);
 
-     parcelles = new ArcGISDynamicMapServiceLayer("http://repos.sig.huma-num.fr/arcgis/rest/services/medievalgis/parcelles/MapServer", {
+     parcelles = new ArcGISDynamicMapServiceLayer("http://repos.sig.huma-num.fr/arcgis/rest/services/medievalgis/parcelles_maisons/MapServer", {
         "id": "parcelles"
      });
      parcelles.on("load", function (e) {
@@ -49,6 +49,7 @@ require([
      // only create the layer list the first time update-end fires
      on.once(parcelles, "update-end", buildLayerList);
     // map.addLayer(parcelles);
+
 table.push(parcelles);
        function buildLayerList() {
         dndSource.clearItems();

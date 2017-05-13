@@ -1,3 +1,5 @@
+window.onload= function()
+{
 require([
       "esri/layers/FeatureLayer",
       "esri/dijit/FeatureTable",
@@ -27,10 +29,11 @@ require([
 
       ready(function(){
 
-        loadTable();
+        loadTable("http://repos.sig.huma-num.fr/arcgis/rest/services/medievalgis/parcelles_maisons/MapServer/2","Maisons1492","tab2");
+        loadTable("http://repos.sig.huma-num.fr/arcgis/rest/services/medievalgis/parcelles_maisons/MapServer/3","Maisons1492","tab3");
 
-        function loadTable(){
-          var url = "http://repos.sig.huma-num.fr/arcgis/rest/services/medievalgis/maisons1439/MapServer/0";
+        function loadTable(layer_url,layerName,tabId){
+          var url = layer_url;
           var monjson=null;
           var content="";
           //AJAX
@@ -50,12 +53,13 @@ require([
            });
            ajax.send();
 
-               var infoTemplate = new InfoTemplate("Maisons1439", content);
+               var infoTemplate = new InfoTemplate(layerName, content);
 
                        var myFeatureLayer = new FeatureLayer(url,{
                           mode: FeatureLayer.MODE_ONDEMAND,
                           infoTemplate: infoTemplate,
                           outFields: ["*"],
+                          showLabels:true,
                           visible: true,
                           id: "fLayer3"
                         });
@@ -77,7 +81,7 @@ require([
             zoomToSelection: true,
             gridOptions: {allowSelectAll: true, allowTextSelection: true},
             outFields: ["*"],
-          }, 'tab3');
+          }, tabId);
 
           myFeatureTable.startup();
 
@@ -89,3 +93,4 @@ require([
       });
     }
   );
+}

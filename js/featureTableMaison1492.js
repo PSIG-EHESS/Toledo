@@ -30,7 +30,7 @@ require([
         loadTable();
 
         function loadTable(){
-          var url = "http://repos.sig.huma-num.fr/arcgis/rest/services/medievalgis/parcellemaisons/MapServer/2";
+          var url = "http://repos.sig.huma-num.fr/arcgis/rest/services/medievalgis/maisons/MapServer/0";
           var monjson=null;
           var content="";
           //AJAX
@@ -72,6 +72,7 @@ require([
             featureLayer : myFeatureLayer,
             map : map,
             showAttachments: true,
+            showGridMenu: false,
             // only allows selection from the table to the map
             syncSelection: true,
             zoomToSelection: true,

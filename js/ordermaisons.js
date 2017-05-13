@@ -25,9 +25,10 @@
         var dndSource = new Source("layerList");
         dndSource.on("DndDrop", reorderLayers);
 
-        maisons = new ArcGISDynamicMapServiceLayer("http://repos.sig.huma-num.fr/arcgis/rest/services/medievalgis/maisons/MapServer", {
+        maisons = new ArcGISDynamicMapServiceLayer("http://repos.sig.huma-num.fr/arcgis/rest/services/medievalgis/parcelles_maisons/MapServer/", {
            "id": "maisons"
         });
+
         maisons.on("load", function (e) {
            dynamicLayerInfos = e.target.createDynamicLayerInfosFromLayerInfos();
            arrayUtils.forEach(dynamicLayerInfos, function (info) {
@@ -48,8 +49,10 @@
         });
         // only create the layer list the first time update-end fires
         on.once(maisons, "update-end", buildLayerList);
+
         //map.addLayer(maisons);
         table.push(maisons);
+
           function buildLayerList() {
            dndSource.clearItems();
            domConstruct.empty(dom.byId("layerList"));
@@ -111,6 +114,7 @@
            var visible = arrayUtils.map(ids, function (id) {
               return dynamicLayerInfos[id];
            });
+           console.log(map.getLayer("maisons"));
            return visible;
         }
 

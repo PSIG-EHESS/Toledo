@@ -5,7 +5,7 @@ $(document).ready(function(){
     "esri/layers/LayerDrawingOptions", "esri/layers/TableDataSource",
     "esri/Color", "esri/renderers/SimpleRenderer",
     "esri/symbols/SimpleFillSymbol", "esri/symbols/SimpleLineSymbol",
-    "esri/map", "dojo/dom", "dojo/dom-construct", "dojo/dom-style",
+    "esri/map", "esri/dijit/Search", "dojo/dom", "dojo/dom-construct", "dojo/dom-style",
     "dojo/query", "dojo/on",
     "dojo/parser", "dojo/_base/array", "dojo/dnd/Source", "dijit/registry",
     "dijit/form/Button", "dojo/domReady!"
@@ -14,13 +14,20 @@ $(document).ready(function(){
        DynamicLayerInfo, LayerDataSource,
        LayerDrawingOptions, TableDataSource,
        Color, SimpleRenderer,
-       SimpleFillSymbol, SimpleLineSymbol,Map,
+       SimpleFillSymbol, SimpleLineSymbol,Map,Search,
        dom, domConstruct, domStyle,
        query, on,
        parser, arrayUtils, Source, registry
     ) {
-      map.addLayers(reverseArr(table));
-  });
+
+      alert(table.length);
+           map.addLayers(table);
+
+           //Set the sources above to the search widget
+           search.startup();
+
+           }
+  )
 
 
 

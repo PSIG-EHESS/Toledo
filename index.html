@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="https://js.arcgis.com/3.20/dijit/themes/claro/claro.css">
     <link rel="stylesheet" href="https://js.arcgis.com/3.20/esri/css/esri.css">
     <link rel="stylesheet" href="./css/style.css">
+
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     </script><script src="https://js.arcgis.com/3.20/"></script>
+    <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./js/init.js" async></script>
 
 </head>
@@ -20,69 +22,105 @@
 <!--************* MAP **************************-->
     <div class="" id="map"  data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'" style="overflow:hidden;"></div>
 <!--*************FIN DE LA MAP **************************-->
+
+ <!--************* TABLE ATTRIBUTAIRE **************************-->
 <div id="container_table" style="background-color:gray;scroll:auto">
      <div id="hide_show"><span id="anim" class="glyphicon glyphicon-triangle-top"></span></div>
 
      <div class="container" style="margin:0;padding:0">
-       <ul class="nav nav-tabs">
-        <li class="active"><a id="parce" data-toggle="tab" href="#tab1">Parcelles</a></li>
-        <li><a id="mais1" data-toggle="tab" href="#tab2">Maison 1</a></li>
-        <li><a id="mais2" data-toggle="tab" href="#tab3">Maison 2</a></li>
+       <ul class="nav nav-tabs" >
+        <li class="active"><a id="parce" data-toggle="tab" href="#tab1"><b style="color:black">Parcelles</b></a></li>
+        <li><a id="mais1" data-toggle="tab" href="#tab2"><b style="color:black">Maison 1439</b></a></li>
+        <li><a id="mais2" data-toggle="tab" href="#tab3"><b style="color:black">Maison 1492</b></a></li>
        </ul>
      </div>
 
           <div id="tab1" class="tab-pane fade in active"></div>
-          <div id="tab2" class="tab-pane fade"><h2>on test</h2></div>
+          <div id="tab2" class="tab-pane fade"><h2></h2></div>
           <div id="tab3" class="tab-pane fade"></div>
      </div>
 
- <!--************* TABLE ATTRIBUTAIRE **************************-->
+ <!--************* FIN TABLE ATTRIBUTAIRE **************************-->
 
 <!--*************LEGENDE **************************-->
    <div id="legendTitle" class="btn btn-default glyphicon glyphicon-eye-open"></div>
 
    <div id="rightPane">
-     <div  style="text-align:right;"><p id="chevron" class="glyphicon glyphicon-new-window" style="cursor:pointer;margin:0px;padding:0"></p></div>
-     <!--Maisons-->
-     <div id="layers">
-     <span id="maisons" class="glyphicon glyphicon-plus"><strong>Maisons</strong></span>
-           <div id="feedback" class="shadow">
-                  <div id="info" >
-                     <div id="layerList"></div>
-                  </div>
-          </div><br>
+     <div class="style"><p style="margin-left:25%"><b>Liste des Couches</b></p><p id="chevron" class="glyphicon glyphicon-new-window" style="cursor:pointer;margin:0px;padding:0"></p></div>
 
-    <!--Parcelles-->
-    <span id="parcelles" class="glyphicon glyphicon-plus"><strong>Parcelles et Maisons</strong></span>
+    <!--Parcelles et Maisons-->
+  <div class="enveloppe" >
+    <span id="parcelles" class="glyphicon glyphicon-plus"><strong style="padding-left:2px">Parcelles-Maisons</strong></span>
           <div id="feedback2" class="shadow">
-                 <div id="info2">
-                    <div id="layerList2"></div>
+                <div id="info2">
+                  <p style="text-align:right;margin-right:12%;margin-bottom:0%">Etiquettes</p>
+                  <div class="chs">
+                    <label for="parcel"><input type="checkbox" id="parcel" checked> Parcelles</label>
+                    <div id="slideOne1">
+                  	   <input type="checkbox" value="None" id="slideOne11" name="check" style="visibility:hidden"/>
+                  	    <label for="slideOne11"></label>
+                    </div>
+                    <br>
+                  </div>
+                  <div class="chs">
+                    <label for="maison1439"><input type="checkbox" id="maison1439" > Maisons 1439</label>
+                    <div id="slideOne2">
+                  	   <input type="checkbox" value="None" id="slideOne22" name="check" style="visibility:hidden"/>
+                  	    <label for="slideOne22"></label>
+                    </div>
+                    <br>
+                  </div>
+                  <div class="chs">
+                    <label for="maison1492"><input type="checkbox" id="maison1492"> Maisons 1492</label>
+                    <div id="slideOne3">
+                  	   <input type="checkbox" value="None" id="slideOne33" name="check" style="visibility:hidden"/>
+                  	    <label for="slideOne33"></label>
+                    </div>
+
+                    <br>
+                  </div>
+                  <label for="mur"></label><input type="checkbox" id="mur"> <b>Murs Recalés</b></label>
                  </div>
          </div><br>
-
+         </div>
          <!--Rues-->
-         <span id="rues" class="glyphicon glyphicon-plus"><strong>Rues</strong></span>
+  <div class="enveloppe" >
+         <span id="rues" class="glyphicon glyphicon-plus"><strong style="padding-left:2px">Rues</strong></span>
                <div id="feedback3" class="shadow">
                       <div id="info3">
                          <div id="layerList3"></div>
                       </div>
               </div><br>
+              </div>
 
         <!--Topographie-->
-          <span id="topographie" class="glyphicon glyphicon-plus"><strong>Topographie</strong></span>
+      <div class="enveloppe" >
+          <span id="topographie" class="glyphicon glyphicon-plus"><strong style="padding-left:2px">Topographie</strong></span>
                 <div id="feedback4" class="shadow">
-                       <div id="info4">
-                          <div id="layerList4"></div>
-                       </div>
+                       <div id="info4" >
+                        <div id="layerList4"></div>
+                      </div>
                </div><br>
+               </div>
 
          <!--Rasters-->
-           <span id="rasters" class="glyphicon glyphicon-plus"><strong>Rasters</strong></span>
+         <div class="enveloppe" >
+           <span id="rasters" class="glyphicon glyphicon-plus"><strong style="padding-left:2px">Rasters</strong></span>
                  <div id="feedback5" class="shadow">
                         <div id="info5">
-                           <div id="layerList5"></div>
+                           <label for="Ign_Anitguo_1879"></label><input type="checkbox" id="Ign_Anitguo_1879"> <b>IGN Anitguo 1879</b></label><br>
+                           <label for="Ortho_Toledo_BN_1945"></label><input type="checkbox" id="Ortho_Toledo_BN_1945"> <b>Ortho Toledo BN 1945</b></label><br>
+                           <label for="Orto_Toledo_BN_1997"></label><input type="checkbox" id="Orto_Toledo_BN_1997"> <b>Orto_Toledo BN 1997</b></label><br>
+                           <label for="Orto_Toledo_colorR_2006"></label><input type="checkbox" id="Orto_Toledo_colorR_2006"> <b>Orto Toledo color 2006</b></label><br>
+                           <label for="Orto_Toledo_colorR_Sigpa_C2003"></label><input type="checkbox" id="Orto_Toledo_colorR_Sigpa_C2003"> <b>Orto Toledo colorR Sigpa C2003</b></label><br>
+                           <label for="Plan_Coello_1858"></label><input type="checkbox" id="Plan_Coello_1858"> <b>Plan Coello 1858</b></label><br>
+                           <label for="Plan_Greco"></label><input type="checkbox" id="Plan_Greco"> <b>Plan Greco</b></label><br>
+                           <label for="Plan_Reinoso_1882"></label><input type="checkbox" id="Plan_Reinoso_1882"> <b>Plan Reinoso 1882</b></label><br>
+                           <label for="Plan_ReyPastor_1926"></label><input type="checkbox" id="Plan_ReyPastor_1926"> <b>Plan ReyPastor 1926</b></label><br>
+                           <label for="planoantiguo_rectif"></label><input type="checkbox" id="planoantiguo_rectif"> <b>Planoantiguo Rectif</b></label><br>
                         </div>
                 </div><br>
+              </div>
   </div>
   </div>
 
@@ -91,10 +129,11 @@
   </div>
   <div id="symbologyContainer" style="visibility:hidden"  class="ui-widget-content" >
      <div  style="text-align:center;color:red"><p id="chevron2" class="glyphicon glyphicon-collapse-up" style="cursor:pointer;margin:0px;padding:0"></p></div>
-      <div id="legendDiv2"></div>
+      <div id="legendDiv2"> legende</div>
     </div>
+<div id="search"></div>
+<div id="pasCouche" style="position:fixed;bottom:38%;left:2%;z-index:3000;visibility:hidden" ><h3>Couche inactive</h3></div>
+<script type="text/javascript" src="./js/toledo.js" ></script>
 
-  <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="./js/toledo.js" ></script>
-  </body>
+</body>
 </html>
