@@ -4,7 +4,7 @@ Code souce de l'application Web SIG Tolède en ligne sur ici, http://psig.huma-n
 
 Technologies utilisées : ArcGIS server, API Javascript ArcGIS, JQuery, ...
 
-Développeurs (géomaticiens de l'Ecole nationale en sciences géographiques - http://ensg.eu) :
+Développeurs (géomaticiens de l'Ecole nationale en sciences géographiques - http://www.ensg.eu) :
 
 Synda THAALBI 
 
