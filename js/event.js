@@ -9,6 +9,7 @@ var tab1=$("#tab1").clone();
 var tab2=$("#tab2").clone();
 var tab3=$("#tab3").clone();
 
+
 $("#tab2").hide();
 $("#tab3").hide();
 
@@ -183,8 +184,14 @@ $("#maison1492").on("click",function()
     }
 
 });
+
+if(document.getElementById("nouvCouche").style.visibility=='hidden')
+{
+  $("#nouvCouche").hide();
+}
 //Gestion de l'affichage des couches
 $("div .shadow").slideUp(0);
+$("#newLayer").on("click",function(e) {$("#feedbackN").slideToggle(2e2);plus_moins(e);});
 $("#maisons").on("click",function(e) {$("#feedback").slideToggle(2e2);plus_moins(e);});
 $("#parcelles").on("click",function(e) {$("#feedback2").slideToggle(2e2);plus_moins(e);});
 $("#rues").on("click",function(e) {$("#feedback3").slideToggle(2e2);plus_moins(e);});

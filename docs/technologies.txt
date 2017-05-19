@@ -1,4 +1,0 @@
--HTML5/CSS,javascript, JQUERY
--Utilisation de bootstrap
--API Javascript de Esri pour l'affichage des Cartes
--ARCGIS server pour la publication des données sous forme de service

@@ -22,7 +22,7 @@ require([
 
      var rue, infos = {};
      var dynamicLayerInfos;
-    var urlCouche="http://repos.sig.huma-num.fr/arcgis/rest/services/medievalgis/routes/MapServer";
+     var urlCouche="http://repos.sig.huma-num.fr/arcgis/rest/services/medievalgis/routes/MapServer";
      rue = new ArcGISDynamicMapServiceLayer(urlCouche, {
          "id": "rue"
      });

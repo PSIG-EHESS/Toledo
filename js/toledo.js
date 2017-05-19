@@ -9,28 +9,70 @@ require([
         function( Map,FeatureLayer, BasemapGallery, arcgisUtils,arrayUtils, ArcGISImageServiceLayer,
         ImageServiceParameters,  parser)
          {
-           ajoutRaster("http://repos.sig.huma-num.fr/arcgis/rest/services/medievalgis/Ign_Anitguo_1879/ImageServer","Ign_Anitguo_1879")
-           ajoutRaster("http://repos.sig.huma-num.fr/arcgis/rest/services/medievalgis/Ortho_Toledo_BN_1945/ImageServer","Ortho_Toledo_BN_1945")
-           ajoutRaster("http://repos.sig.huma-num.fr/arcgis/rest/services/medievalgis/Orto_Toledo_BN_1997/ImageServer","Orto_Toledo_BN_1997")
-           ajoutRaster("http://repos.sig.huma-num.fr/arcgis/rest/services/medievalgis/Orto_Toledo_colorR_2006/ImageServer","Orto_Toledo_colorR_2006")
-           ajoutRaster("http://repos.sig.huma-num.fr/arcgis/rest/services/medievalgis/Orto_Toledo_ColorR_Sigpa_C2003/ImageServer","Orto_Toledo_colorR_Sigpa_C2003")
-           ajoutRaster("http://repos.sig.huma-num.fr/arcgis/rest/services/medievalgis/Plan_Coello_1858/ImageServer","Plan_Coello_1858")
-           ajoutRaster("http://repos.sig.huma-num.fr/arcgis/rest/services/medievalgis/Plan_Greco/ImageServer","Plan_Greco")
-           ajoutRaster("http://repos.sig.huma-num.fr/arcgis/rest/services/medievalgis/Plan_Reinoso_1882/ImageServer","Plan_Reinoso_1882")
-           ajoutRaster("http://repos.sig.huma-num.fr/arcgis/rest/services/medievalgis/Plan_ReyPastor_1926/ImageServer","Plan_ReyPastor_1926")
-           ajoutRaster("http://repos.sig.huma-num.fr/arcgis/rest/services/medievalgis/planoantiguo_rectif/ImageServer","planoantiguo_rectif")
-http://repos.sig.huma-num.fr/arcgis/rest/services/medievalgis/Orto_Toledo_colorR_2006/ImageServer
-           function ajoutRaster(url, idRaster)
-           {
-                var params = new ImageServiceParameters();
-                params.noData = 0;
-               var imageServiceLayer = new ArcGISImageServiceLayer(url, {
-                 imageServiceParameters: params,
-                visible:false,
-                 id:idRaster
-               });
-             map.addLayer(imageServiceLayer);
-           }
+
+
+/////////////////*************************** AJOUT D'UNE COUCHE VECTEUR******************************************************//////////////////////////////////////
+//
+// Lien du service : c'est le lien rest obtenu après la publication du service dans arcgis server
+// idvecteur : c'est l'id d'identification dans la carte; chaque couche doit avoir un id
+// NomAfficher : c'est le nom visible du vecteur, à afficher juste après le input
+//groupe :
+//        -info2 : pour l'ajouter dans le groupe des parcelle et maisons
+//        -info3 : pour l'ajouter dans le groupe des rues
+//        -info4 : pour l'ajouter dans le groupe de topographie
+//        -newLay : pour l'ajouter dans un nouveau groupe
+//Pour ajouter un nouveau vecteur décommenter la ligne suivante en remplissant les paramètres de la fonction
+//       ajoutvecteur("lien du service","idvecteur","NomAfficher","groupe");
+//EXemple:            ajoutvecteur("http://repos.sig.huma-num.fr/arcgis/rest/services/medievalgis/parcelles_maisons/MapServer/1","parcelle2","parcelle2","info2");
+
+
+
+////////***********************************************************************************************************//////////////////////////////////////////
+
+        function ajoutvecteur(url, idvecteur,layerName,groupe)
+        {
+          var myFeatureLayer = new FeatureLayer(url,{
+               mode: FeatureLayer.MODE_ONDEMAND,
+               visible: true,
+               id: idvecteur
+             });
+            var input = document.createElement("input");
+            input.type="checkbox";
+            input.id=idvecteur;
+            input.checked=true;
+            input.onclick=function(e){switchLayer(e)};
+            var par = document.createElement("par");
+            var br = document.createElement("br");
+            par.innerText=layerName;
+            document.getElementById(groupe).appendChild(br);
+            document.getElementById(groupe).appendChild(input);
+            document.getElementById(groupe).appendChild(par);
+            document.getElementById(groupe).appendChild(br);
+
+            if(groupe=="newLay")
+            {
+              $("#nouvCouche").css("visibility","visible");
+              $("#nouvCouche").show();
+            }
+
+            map.addLayer(myFeatureLayer);
+
+        }
+
+      function switchLayer(event)
+      {
+         var layer = map.getLayer(event.target.id);
+         if(event.target.checked)
+         {
+           layer.show();
+         }
+         else {
+           layer.hide();
+         }
+
+      }
+
+
 
     });
 
@@ -45,6 +87,6 @@ jQuery.loadScript = function (url, callback) {
  $.loadScript('./js/parcellesMaisons.js', function(){});
  $.loadScript('./js/topo.js', function(){});
  $.loadScript('./js/orderrues.js', function(){});
- $.loadScript('./js/orderRaster.js', function(){});
+ $.loadScript('./js/rasters.js', function(){});
  $.loadScript('./js/symbology.js', function(){});
  $.loadScript('./js/event.js', function(){});

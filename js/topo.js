@@ -20,28 +20,29 @@ require([
      parser, arrayUtils, Source, registry
   ) {
 
-     var raster, infos = {};
+     var topo, infos = {};
      var dynamicLayerInfos;
-    var urlCouche="http://repos.sig.huma-num.fr/arcgis/rest/services/medievalgis/Rasters/MapServer";
-     raster = new ArcGISDynamicMapServiceLayer(urlCouche, {
-         "id": "raster"
+    var urlCouche="http://repos.sig.huma-num.fr/arcgis/rest/services/medievalgis/topographie/MapServer";
+     topo = new ArcGISDynamicMapServiceLayer(urlCouche, {
+         "id": "topo"
      });
 
- raster.on("load",buildLayerList);
- map.addLayer(raster);
+ topo.on("load",buildLayerList);
+ //table.push(topo);
+ map.addLayer(topo);
  function buildLayerList() {
-           var items = arrayUtils.map(raster.layerInfos, function(info, index) {
+           var items = arrayUtils.map(topo.layerInfos, function(info, index) {
             info.defaultVisibility=false;
-             return "<input type='checkbox' class='list_item5'" + (info.defaultVisibility ? "checked=checked" : "") + "' id='raster" + info.id + "'' /><label for='raster" + info.id + "'>" + info.name + "</label><br>";
+             return "<input type='checkbox' class='list_item4'" + (info.defaultVisibility ? "checked=checked" : "") + "' id='" + info.id + "'' /><label for='" + info.id + "'>" + info.name + "</label><br>";
            });
-           var ll = dom.byId("layerList5");
+           var ll = dom.byId("layerList4");
            ll.innerHTML = items.join(' ');
-           raster.setVisibleLayers(visible);
+           topo.setVisibleLayers(visible);
            on(ll, "click", updateLayerVisibility);
          }
 
          function updateLayerVisibility() {
-           var inputs = query(".list_item5");
+           var inputs = query(".list_item4");
            var input;
            visible = [];
 
@@ -54,7 +55,7 @@ require([
            if (visible.length === 0) {
              visible.push(-1);
            }
-           raster.setVisibleLayers(visible);
+           topo.setVisibleLayers(visible);
          }
 
 
